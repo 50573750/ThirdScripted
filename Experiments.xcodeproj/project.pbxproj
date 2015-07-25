@@ -33,6 +33,7 @@
 		7E1CF9D81B63C6800022036E /* RestrictBoltzmanMachine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = RestrictBoltzmanMachine.hpp; path = Experiments/RestrictBoltzmanMachine.hpp; sourceTree = "<group>"; };
 		7E1CF9D91B63C6AB0022036E /* Library.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Library.hpp; path = Experiments/Library.hpp; sourceTree = "<group>"; };
 		7E1CF9DB1B63CB680022036E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7E1CF9DD1B63DB7B0022036E /* Tests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Tests.hpp; path = Experiments/Tests.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +89,7 @@
 		7E1CF9DA1B63CB4C0022036E /* Readme */ = {
 			isa = PBXGroup;
 			children = (
+				7E1CF9DD1B63DB7B0022036E /* Tests.hpp */,
 				7E1CF9DB1B63CB680022036E /* README.md */,
 			);
 			name = Readme;
