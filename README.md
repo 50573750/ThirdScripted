@@ -1,6 +1,8 @@
 # ThirdScripted
--   This is a intelligence program library which is a trial version.
+-   This is a intelligence program library which is a temporally trial version.
 -   All the methods are programmed as scripted code.
+-   You could feel free to use, deliver and modify all the open source as you like.
+-   I wish you could star this project and maybe contribute codes for it.
 
 # Models and Alorightms.
 There list all the models and algorithms:
