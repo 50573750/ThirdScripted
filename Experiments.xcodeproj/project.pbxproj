@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E108BE01B594F620058AE56 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E108BDF1B594F620058AE56 /* main.cpp */; };
+		7E0B73BB1B5D1E3D00FB2896 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E0B73BA1B5D1E3D00FB2896 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +23,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7E0B73B71B5B89C400FB2896 /* DeterminantPointProcess.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = DeterminantPointProcess.hpp; path = Experiments/DeterminantPointProcess.hpp; sourceTree = "<group>"; };
+		7E0B73B91B5B8D2C00FB2896 /* GuassianMixtureModel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = GuassianMixtureModel.hpp; path = Experiments/GuassianMixtureModel.hpp; sourceTree = "<group>"; };
+		7E0B73BA1B5D1E3D00FB2896 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		7E0B73BC1B62979900FB2896 /* PPM.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = PPM.hpp; path = Experiments/PPM.hpp; sourceTree = "<group>"; };
+		7E0B73BD1B62982900FB2896 /* IsingModel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = IsingModel.hpp; path = Experiments/IsingModel.hpp; sourceTree = "<group>"; };
 		7E108BDC1B594F620058AE56 /* Experiments */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Experiments; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E108BDF1B594F620058AE56 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		7E1CF9D81B63C6800022036E /* RestrictBoltzmanMachine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = RestrictBoltzmanMachine.hpp; path = Experiments/RestrictBoltzmanMachine.hpp; sourceTree = "<group>"; };
+		7E1CF9D91B63C6AB0022036E /* Library.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Library.hpp; path = Experiments/Library.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,9 +44,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E0B73B81B5B89D400FB2896 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				7E0B73B71B5B89C400FB2896 /* DeterminantPointProcess.hpp */,
+				7E0B73B91B5B8D2C00FB2896 /* GuassianMixtureModel.hpp */,
+				7E0B73BC1B62979900FB2896 /* PPM.hpp */,
+				7E0B73BD1B62982900FB2896 /* IsingModel.hpp */,
+				7E1CF9D81B63C6800022036E /* RestrictBoltzmanMachine.hpp */,
+				7E1CF9D91B63C6AB0022036E /* Library.hpp */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
 		7E108BD31B594F610058AE56 = {
 			isa = PBXGroup;
 			children = (
+				7E0B73B81B5B89D400FB2896 /* Library */,
 				7E108BDE1B594F620058AE56 /* Experiments */,
 				7E108BDD1B594F620058AE56 /* Products */,
 			);
@@ -57,7 +77,7 @@
 		7E108BDE1B594F620058AE56 /* Experiments */ = {
 			isa = PBXGroup;
 			children = (
-				7E108BDF1B594F620058AE56 /* main.cpp */,
+				7E0B73BA1B5D1E3D00FB2896 /* main.cpp */,
 			);
 			path = Experiments;
 			sourceTree = "<group>";
@@ -118,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E108BE01B594F620058AE56 /* main.cpp in Sources */,
+				7E0B73BB1B5D1E3D00FB2896 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +225,12 @@
 		7E108BE41B594F620058AE56 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"\"$(inherited)\"",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -212,6 +238,12 @@
 		7E108BE51B594F620058AE56 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"\"$(inherited)\"",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -235,6 +267,7 @@
 				7E108BE51B594F620058AE56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,15 +1,12 @@
-//
-//  main.cpp
-//  Experiments
-//
-//  Created by BookmanXiaohan on 15/7/17.
-//  Copyright (c) 2015年 BookmanXiaohan. All rights reserved.
-//
+#include "Library.hpp"
+#include "RestrictBoltzmanMachine.hpp"
 
-#include <iostream>
-
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main()
+{
+    srand(time(nullptr));
+    cout<<"Begin"<<endl;
+    
+    cout<<"End"<<endl;
+    
     return 0;
 }
