@@ -4,6 +4,10 @@
 -   You could feel free to use, deliver and modify all the open source as you like.
 -   I wish you could star this project and maybe contribute codes for it.
 
+Dependences
+-   Eigen, a C++ Linear Algrebra Library.
+-   C++ STL.
+
 # Models and Alorightms.
 There list all the models and algorithms:
 -   Determinant Point Process (DPP)
