@@ -14,3 +14,4 @@ There list all the models and algorithms:
 -   Ising Model with Collapsed Sampling.
 -   Restrict Boltzman Machine (RBM) with EM Empirical-Expectional Gradient.
 -   Restrict Boltzman Machine (RBM) with Naive Mean.
+-   Hidden Markov Model (HMM) with Probabilty Estimation, Viterbi Decoding and Baum-Welch Training Algorithm.
