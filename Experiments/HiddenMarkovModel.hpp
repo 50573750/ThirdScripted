@@ -78,6 +78,44 @@ public:
             states[pos] = record_state(pos, states[pos+1]);
         }
     }
+    
+    void baum_welch_training(const vector<vector<unsigned>>& dataset_sequence)
+    {
+        MatrixXd translations_trained = MatrixXd::Zero(n_state, n_state);
+        MatrixXd obversations_trained = MatrixXd::Zero(n_obversation, n_state);
+        for(auto seq=dataset_sequence.begin(); seq != dataset_sequence.end(); ++ seq)
+        {
+            MatrixXd prob_forward(seq->size(), n_state);
+            prob_forward.row(0) = MatrixXd::Ones(1, n_state);
+            for(auto pos=1; pos < seq->size(); ++ pos)
+            {
+                prob_forward.row(pos) = prob_forward.row(pos-1) * translations;
+                prob_forward.row(pos) = prob_forward.row(pos).cwiseProduct(obversations.row(seq->at(pos)));
+            }
+            
+            MatrixXd prob_backward(seq->size(), n_state);
+            prob_backward.row(seq->size()-1) = MatrixXd::Ones(1, seq->size());
+            for(auto pos=seq->size()-1; pos>=1; -- pos)
+            {
+                prob_backward.row(pos-1) = prob_backward.row(pos) * translations.transpose();
+                prob_backward.row(pos-1) = prob_backward.row(pos-1).cwiseProduct(obversations.row(seq->at(pos)));
+            }
+            
+            for(auto pos=0; pos<seq->size()-1; ++pos)
+            {
+                for(auto src=0; src<n_state; ++src)
+                {
+                    for(auto des=0; des<n_state; ++des)
+                    {
+                        translations_trained(src, des) += prob_forward(pos, src) * translations(src, des)
+                        * obversations(seq->at(pos), des) * prob_backward(pos + 1, des);
+                    }
+                    
+                    obversations(seq->at(pos), src) += prob_forward(pos, src) * prob_backward(pos, src);
+                }
+            }
+        }
+    }
 };
 
 #endif

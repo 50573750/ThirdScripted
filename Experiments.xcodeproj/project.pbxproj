@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E0B73BB1B5D1E3D00FB2896 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E0B73BA1B5D1E3D00FB2896 /* main.cpp */; };
 		7E1CF9DC1B63CB680022036E /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7E1CF9DB1B63CB680022036E /* README.md */; };
+		7E1CF9E01B6667330022036E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7E1CF9DF1B6667330022036E /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,7 +26,6 @@
 /* Begin PBXFileReference section */
 		7E0B73B71B5B89C400FB2896 /* DeterminantPointProcess.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = DeterminantPointProcess.hpp; path = Experiments/DeterminantPointProcess.hpp; sourceTree = "<group>"; };
 		7E0B73B91B5B8D2C00FB2896 /* GuassianMixtureModel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = GuassianMixtureModel.hpp; path = Experiments/GuassianMixtureModel.hpp; sourceTree = "<group>"; };
-		7E0B73BA1B5D1E3D00FB2896 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		7E0B73BC1B62979900FB2896 /* PPM.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = PPM.hpp; path = Experiments/PPM.hpp; sourceTree = "<group>"; };
 		7E0B73BD1B62982900FB2896 /* IsingModel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = IsingModel.hpp; path = Experiments/IsingModel.hpp; sourceTree = "<group>"; };
 		7E108BDC1B594F620058AE56 /* Experiments */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Experiments; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +34,7 @@
 		7E1CF9DB1B63CB680022036E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7E1CF9DD1B63DB7B0022036E /* Tests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Tests.hpp; path = Experiments/Tests.hpp; sourceTree = "<group>"; };
 		7E1CF9DE1B65191C0022036E /* HiddenMarkovModel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = HiddenMarkovModel.hpp; path = Experiments/HiddenMarkovModel.hpp; sourceTree = "<group>"; };
+		7E1CF9DF1B6667330022036E /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 		7E108BDE1B594F620058AE56 /* Experiments */ = {
 			isa = PBXGroup;
 			children = (
-				7E0B73BA1B5D1E3D00FB2896 /* main.cpp */,
+				7E1CF9DF1B6667330022036E /* main.cpp */,
 			);
 			path = Experiments;
 			sourceTree = "<group>";
@@ -153,8 +153,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E1CF9E01B6667330022036E /* main.cpp in Sources */,
 				7E1CF9DC1B63CB680022036E /* README.md in Sources */,
-				7E0B73BB1B5D1E3D00FB2896 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
