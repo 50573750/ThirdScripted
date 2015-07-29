@@ -4,6 +4,7 @@
 #include "PPM.hpp"
 #include "IsingModel.hpp"
 #include "HiddenMarkovModel.hpp"
+#include "GuassianProcess.hpp"
 
 void draw_random_circle_ising_model()
 {
@@ -37,7 +38,7 @@ void draw_random_circle_ising_model()
     PPM::write(imnm.result(), "/Users/Bookman/Documents/trys/draw_random_circle.ppm");
 }
 
-void test_for_hmm()
+void test_for_HMM()
 {
     HiddenMarkovModel           hmm(10, 4);
     
@@ -48,6 +49,17 @@ void test_for_hmm()
     cout<<-log(hmm.probability(testcase[0]))<<endl;
     cout<<-log(hmm.probability(testcase[1]))<<endl;
     cout<<-log(hmm.probability(testcase[2]))<<endl;
+}
+
+void test_for_GP()
+{
+    MatrixXd    datasets(4,2);
+    datasets<<1,1,-1,1,1,-1,-1,-1;
+    MatrixXd    labels(1,4);
+    labels<<1,1,-1,-1;
+    
+    GuassianProcessExact gpe(datasets, labels);
+    cout<<gpe.result(datasets)<<endl;
 }
 
 #endif
