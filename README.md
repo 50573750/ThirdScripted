@@ -20,3 +20,4 @@ There list all the models and algorithms:
 -   Restrict Boltzman Machine (RBM) with Naive Mean.
 -   Hidden Markov Model (HMM) with Probabilty Estimation, Viterbi Decoding and Baum-Welch Training Algorithm.
 -   Gussian Process with extract solution and Naive Mean Field Solution.
+-   Probablistic Latent Semantic Index (pLSI)

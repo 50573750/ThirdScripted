@@ -5,6 +5,7 @@
 #include "IsingModel.hpp"
 #include "HiddenMarkovModel.hpp"
 #include "GuassianProcess.hpp"
+#include "ProbablisticLatentSemanticIndex.hpp"
 
 void draw_random_circle_ising_model()
 {
@@ -40,10 +41,10 @@ void draw_random_circle_ising_model()
 
 void test_for_HMM()
 {
-    HiddenMarkovModel           hmm(10, 4);
+    HiddenMarkovModel           hmm(10, 5);
     
     vector<vector<unsigned>>    datasets = { {0,1,2,3,1,0}, {1,0,1,2,3,0}, {1,1,2,3,1,1,0} };
-    hmm.baum_welch_training(datasets, 5);
+    hmm.baum_welch_training(datasets, 10);
     
     vector<vector<unsigned>>    testcase = { {1,2,3}, {0,1,2}, {0,0,0} };
     cout<<-log(hmm.probability(testcase[0]))<<endl;
@@ -62,4 +63,16 @@ void test_for_GP()
     cout<<gpe.result(datasets)<<endl;
 }
 
+void test_for_PLSI()
+{
+    MatrixXd    datasets(5,5);
+    datasets<<1,2,1,1,5, 2,3,0,1,5, 1,0,4,5,0, 5,6,1,0,5, 0,1,6,6,0;
+    
+    ProbablisiticLatentSemanticIndex    plsi(datasets, 2);
+    plsi.run(200);
+    
+    cout<<"Topic Distribution:"<<endl<<plsi.result_topic()<<endl<<endl;
+    cout<<"Word Distribution:"<<endl<<plsi.result_topic_at_word()<<endl<<endl;
+    cout<<"Document Distribution:"<<endl<<plsi.result_topic_at_document()<<endl<<endl;
+}
 #endif

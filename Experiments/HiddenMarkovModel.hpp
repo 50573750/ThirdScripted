@@ -118,7 +118,7 @@ public:
                     prob_backward.row(pos) = prob_backward.row(pos).cwiseProduct(obversations.col(seq->at(pos)).transpose());
                 }
                 
-                for(auto pos=0; pos<seq->size()-1; ++pos)
+                for(auto pos=0; pos<seq->size(); ++pos)
                 {
                     for(auto src=0; src<n_state; ++src)
                     {
@@ -127,12 +127,23 @@ public:
                             translations_trained(src, des) += prob_forward(pos+1, src) * translations(src, des)
                             * obversations(des, seq->at(pos)) * prob_backward(pos+1, des);
                         }
-                        
-                        obversations_trained(src, seq->at(pos)) += prob_forward(pos+1, src) * prob_backward(pos, src);
                     }
                 }
+                
+                for(auto pos=0; pos<seq->size(); ++pos)
+                {
+                    for(auto src=0; src<n_state; ++src)
+                    {
+                        for(auto des=0; des<n_state; ++des)
+                        {
+                            obversations_trained(src, seq->at(pos)) += prob_forward(pos+1, src) * translations(src, des)
+                            * obversations(des, seq->at(pos)) * prob_backward(pos+1, des);
+                        }
+                    }
+                }
+
             }
-            
+        
             translations = translations_trained;
             obversations = obversations_trained;
             

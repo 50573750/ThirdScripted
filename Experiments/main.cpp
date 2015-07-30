@@ -1,13 +1,10 @@
 #include "Library.hpp"
 #include "Tests.hpp"
 
-
 int main()
 {
     srand(time(nullptr));
-    cout<<"Begin"<<endl;
-    test_for_GP();
-    cout<<"End"<<endl;
-    
+    MatrixXd d;
+    test_for_HMM(); 
     return 0;
 }
