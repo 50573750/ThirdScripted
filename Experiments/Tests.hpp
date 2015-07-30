@@ -41,15 +41,15 @@ void draw_random_circle_ising_model()
 
 void test_for_HMM()
 {
-    HiddenMarkovModel           hmm(10, 5);
+    HiddenMarkovModel           hmm(2, 4);
     
-    vector<vector<unsigned>>    datasets = { {0,1,2,3,1,0}, {1,0,1,2,3,0}, {1,1,2,3,1,1,0} };
-    hmm.baum_welch_training(datasets, 10);
+    vector<vector<unsigned>>    datasets = { {0,1,2,3,1,0}, {2,0,1,2,3,0}, {1,1,2,3,1,1,0} };
+    hmm.baum_welch_training(datasets, 100);
     
     vector<vector<unsigned>>    testcase = { {1,2,3}, {0,1,2}, {0,0,0} };
-    cout<<-log(hmm.probability(testcase[0]))<<endl;
-    cout<<-log(hmm.probability(testcase[1]))<<endl;
-    cout<<-log(hmm.probability(testcase[2]))<<endl;
+    cout<<(hmm.probability(testcase[0]))<<endl;
+    cout<<(hmm.probability(testcase[1]))<<endl;
+    cout<<(hmm.probability(testcase[2]))<<endl;
 }
 
 void test_for_GP()
