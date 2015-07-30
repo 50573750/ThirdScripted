@@ -41,9 +41,9 @@ void draw_random_circle_ising_model()
 
 void test_for_HMM()
 {
-    HiddenMarkovModel           hmm(2, 4);
+    HiddenMarkovModel           hmm(10, 4);
     
-    vector<vector<unsigned>>    datasets = { {0,1,2,3,1,0}, {2,0,1,2,3,0}, {1,1,2,3,1,1,0} };
+    vector<vector<unsigned>>    datasets = { {0,1,2,3,1,0,2,0,1,2,3,0,1,1,2,3,1,1,0} };
     hmm.baum_welch_training(datasets, 100);
     
     vector<vector<unsigned>>    testcase = { {1,2,3}, {0,1,2}, {0,0,0} };
@@ -75,4 +75,5 @@ void test_for_PLSI()
     cout<<"Word Distribution:"<<endl<<plsi.result_topic_at_word()<<endl<<endl;
     cout<<"Document Distribution:"<<endl<<plsi.result_topic_at_document()<<endl<<endl;
 }
+
 #endif

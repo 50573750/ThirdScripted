@@ -8,13 +8,14 @@ class HiddenMarkovModel
 protected:
     MatrixXd        translations;
     MatrixXd        obversations;
+    MatrixXd        prior_state;
     const unsigned  n_state;
     const unsigned  n_obversation;
     
 public:
     HiddenMarkovModel(unsigned n_state, unsigned n_obversation)
     :translations(n_state, n_state), obversations(n_state, n_obversation),
-    n_state(n_state), n_obversation(n_obversation)
+    n_state(n_state), n_obversation(n_obversation), prior_state(1, n_state)
     {
         for(auto i=0; i<n_state; ++i)
         {
@@ -27,16 +28,19 @@ public:
             {
                 obversations(i, j) = rand()%100/100.0;
             }
-            
+        
             translations.row(i) /= translations.row(i).sum();
             obversations.row(i) /= obversations.row(i).sum();
         }
+        
+        random_probablistic_matrix(prior_state);
+        prior_state /= prior_state.sum();
     }
     
     double probability(const vector<unsigned>& sequence)
     {
         MatrixXd prob(1, n_state);
-        prob = MatrixXd::Ones(1, n_state) / n_state;
+        prob = prior_state;
         
         for(auto pos=0; pos<sequence.size(); ++pos)
         {
@@ -51,8 +55,8 @@ public:
     {
         MatrixXi record_state(sequence.size(), n_state);
         
-        VectorXd prob(n_state);
-        prob = VectorXd::Ones(n_state);
+        MatrixXd prob(1, n_state);
+        prob = prior_state;
         
         for(auto pos=0; pos<sequence.size(); ++pos)
         {
@@ -103,7 +107,7 @@ public:
             for(auto seq=dataset_sequence.begin(); seq != dataset_sequence.end(); ++ seq)
             {
                 MatrixXd prob_forward(seq->size() + 1, n_state);
-                prob_forward.row(0) = MatrixXd::Ones(1, n_state);
+                prob_forward.row(0) = prior_state;
                 for(auto pos=0; pos < seq->size(); ++ pos)
                 {
                     prob_forward.row(pos+1) = prob_forward.row(pos) * translations;
@@ -142,10 +146,19 @@ public:
                     }
                 }
 
+                for(auto src=0; src<n_state; ++src)
+                {
+                    for(auto des=0; des<n_state; ++des)
+                    {
+                        prior_state(src) += prob_forward(1, src) * translations(src, des)
+                        * obversations(des, seq->at(1)) * prob_backward(1, des);
+                    }
+                }
             }
         
             translations = translations_trained;
             obversations = obversations_trained;
+            prior_state /= prior_state.sum();
             
             for(auto i=0; i<n_state; ++i)
             {
