@@ -21,3 +21,12 @@ There list all the models and algorithms:
 -   Hidden Markov Model (HMM) with Probabilty Estimation, Viterbi Decoding and Baum-Welch Training Algorithm.
 -   Gussian Process with extract solution and Naive Mean Field Solution.
 -   Probablistic Latent Semantic Index (pLSI)
+
+# Future Work.
+There list probablic future work.
+-   Kalman Filter.
+-   Conditional Random Field.
+-   Apriori Algorithm.
+-   AdaBoost with Linear Classifiers.
+-   Decision Trees.
+-   Bagging, Random Forest.
