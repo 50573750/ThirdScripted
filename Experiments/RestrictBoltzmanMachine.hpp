@@ -24,6 +24,11 @@ public:
         return datagen_hidden;
     }
     
+    const MatrixXd & get_weights() const
+    {
+        return weights;
+    }
+    
     void run(int epos, double alpha = 0.1, int cd_step=2)
     {
         auto sigm = [](double x) { return 1/(1 + exp(-x)); };
@@ -47,13 +52,14 @@ public:
                     
                     for(auto elem=0; elem<sampled_hidden.cols(); ++elem)
                     {
+                        sampled_prob_hidden(0, elem) = 1-sigm(sampled_prob_hidden(0,elem));
                         if (rand()%1000/1000.0 < sigm(sampled_hidden(0, elem)))
                         {
-                            sampled_hidden(0, elem) = 1;
+                            sampled_hidden(0, elem) = 0;
                         }
                         else
                         {
-                            sampled_hidden(0, elem) = 0;
+                            sampled_hidden(0, elem) = 1;
                         }
                     }
                     
@@ -64,18 +70,18 @@ public:
                     {
                         if (rand()%1000/1000.0 < sigm(sampled_visual(0, elem)))
                         {
-                            sampled_visual(0, elem) = 1;
+                            sampled_visual(0, elem) = 0;
                         }
                         else
                         {
-                            sampled_visual(0, elem) = 0;
+                            sampled_visual(0, elem) = 1;
                         }
                     }
                 }
                 
                 datagen_hidden.row(cnt_sample) = sampled_hidden;
-                weights += alpha * dataset.row(cnt_sample).transpose() * sampled_hidden
-                - alpha * sampled_visual.transpose() * sampled_prob_hidden;
+                weights += alpha * dataset.row(cnt_sample).transpose() * sampled_prob_hidden
+                - alpha * sampled_visual.transpose() * sampled_hidden;
             }
         }
     }
@@ -102,6 +108,11 @@ public:
         return datagen_hidden;
     }
     
+    const MatrixXd & get_weights() const
+    {
+        return weights;
+    }
+
     void run(int epos, double alpha=0.1)
     {
         auto sigm = [](double x) { return 1/(1 + exp(-x)); };
