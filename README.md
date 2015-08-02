@@ -10,17 +10,17 @@ Dependences
 
 # Models and Alorightms.
 There list all the models and algorithms:
--   Determinant Point Process (DPP)
--   Guassian Mixture Model (GMM)
--   Portable Pixelmap (PPM) Format Operation
--   Ising Model with Naive Mean
+-   Determinant Point Process (DPP).
+-   Guassian Mixture Model (GMM).
+-   Portable Pixelmap (PPM) Format Operation.
+-   Ising Model with Naive Mean Field.
 -   Ising Model with Gibbs Sampling/MCMC.
 -   Ising Model with Collapsed Sampling.
 -   Restrict Boltzman Machine (RBM) with EM Empirical-Expectional Gradient.
--   Restrict Boltzman Machine (RBM) with Naive Mean.
 -   Hidden Markov Model (HMM) with Probabilty Estimation, Viterbi Decoding and Baum-Welch Training Algorithm.
 -   Gussian Process with extract solution and Naive Mean Field Solution.
 -   Probablistic Latent Semantic Index (pLSI)
+-   Multi-Layer Feed Forward Neual Network with RBM pre-training and Back-propergation fine-tuning.
 
 # Future Work.
 There list probablic future work.

@@ -6,6 +6,7 @@
 #include "HiddenMarkovModel.hpp"
 #include "GuassianProcess.hpp"
 #include "ProbablisticLatentSemanticIndex.hpp"
+#include "FeadForwardNeualNetworkBackPropergation.hpp"
 
 void draw_random_circle_ising_model()
 {
@@ -74,6 +75,40 @@ void test_for_PLSI()
     cout<<"Topic Distribution:"<<endl<<plsi.result_topic()<<endl<<endl;
     cout<<"Word Distribution:"<<endl<<plsi.result_topic_at_word()<<endl<<endl;
     cout<<"Document Distribution:"<<endl<<plsi.result_topic_at_document()<<endl<<endl;
+}
+
+void test_for_FFNNBP()
+{
+    FeedForwardNeualNetwokBackPropergation ffnnbp(2, 1);
+    ffnnbp.add_hidden_layer(5);
+    ffnnbp.add_hidden_layer(5);
+    ffnnbp.add_hidden_layer(5);
+    ffnnbp.add_hidden_layer(5);
+    ffnnbp.add_hidden_layer(10);
+    ffnnbp.add_hidden_layer(5);
+    
+    vector<pair<VectorXd, VectorXd>>    datasets(4);
+    
+    for(auto i=0; i<4; ++i)
+    {
+        datasets[i].first.resize(2);
+        datasets[i].second.resize(1);
+    }
+    
+    datasets[0].first<<0,0;
+    datasets[0].second<<1;
+    datasets[1].first<<0,1;
+    datasets[1].second<<0;
+    datasets[2].first<<1,0;
+    datasets[2].second<<0;
+    datasets[3].first<<1,1;
+    datasets[3].second<<1;
+    
+    ffnnbp.train(datasets, 10000, 0.1);
+    cout<<ffnnbp.infer(datasets[0].first)<<endl;
+    cout<<ffnnbp.infer(datasets[1].first)<<endl;
+    cout<<ffnnbp.infer(datasets[2].first)<<endl;
+    cout<<ffnnbp.infer(datasets[3].first)<<endl;
 }
 
 #endif
