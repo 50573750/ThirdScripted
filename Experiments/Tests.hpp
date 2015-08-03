@@ -6,7 +6,8 @@
 #include "HiddenMarkovModel.hpp"
 #include "GuassianProcess.hpp"
 #include "ProbablisticLatentSemanticIndex.hpp"
-#include "FeadForwardNeualNetworkBackPropergation.hpp"
+#include "FeadForwardNeuralNetworkBackPropergation.hpp"
+#include "AutoEncoder.hpp"
 
 void draw_random_circle_ising_model()
 {
@@ -109,6 +110,28 @@ void test_for_FFNNBP()
     cout<<ffnnbp.infer(datasets[1].first)<<endl;
     cout<<ffnnbp.infer(datasets[2].first)<<endl;
     cout<<ffnnbp.infer(datasets[3].first)<<endl;
+}
+
+void test_for_AE()
+{
+    MatrixXd    datasets(4,2);
+    datasets<<0,0,1,0,0,1,1,1;
+    
+    AutoEncoder ae(2);
+    ae.add_layer(5);
+    ae.add_layer(3);
+    ae.add_layer(5);
+    
+    ae.train(datasets, 10000, 0.5, 0.1);
+    cout<<ae.infer(datasets.row(0))<<endl;
+    cout<<ae.infer(datasets.row(1))<<endl;
+    cout<<ae.infer(datasets.row(2))<<endl;
+    cout<<ae.infer(datasets.row(3))<<endl;
+    
+    cout<<ae.infer_represent(datasets.row(0))<<endl;
+    cout<<ae.infer_represent(datasets.row(1))<<endl;
+    cout<<ae.infer_represent(datasets.row(2))<<endl;
+    cout<<ae.infer_represent(datasets.row(3))<<endl;
 }
 
 #endif

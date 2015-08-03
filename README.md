@@ -21,6 +21,7 @@ There list all the models and algorithms:
 -   Gussian Process with extract solution and Naive Mean Field Solution.
 -   Probablistic Latent Semantic Index (pLSI)
 -   Multi-Layer Feed Forward Neual Network with RBM pre-training and Back-propergation fine-tuning.
+-   AutoEncoder
 
 # Future Work.
 There list probablic future work.

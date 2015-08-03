@@ -44,6 +44,29 @@ public:
         return output;
     }
     
+    MatrixXd infer(const VectorXd& input, int layer_stop)
+    {
+        auto sigmod = [&](double& elem)
+        {
+            return 1/(1 + exp(-elem));
+        };
+        
+        MatrixXd    output = input.transpose();
+        for(auto layer=0; layer<weights.size(); ++layer)
+        {
+            if (layer == layer_stop)
+                break;
+            
+            output = output * weights[layer];
+            for(auto i=0; i<output.size(); ++i)
+            {
+                output(i) = sigmod(output(i));
+            }
+        }
+        
+        return output;
+    }
+    
     void train(vector<pair<VectorXd, VectorXd>>& dataset, int epoc, double alpha = 0.2)
     {
         auto sigmod = [&](double& elem)
@@ -87,7 +110,7 @@ public:
                 }
                 
                 vector<MatrixXd>   dervative_output;
-                dervative_output.push_back((hidden_output.back() - dataset[pos].second).transpose());
+                dervative_output.push_back(hidden_output.back() - dataset[pos].second.transpose());
                 for(int layer=weights.size()-1; layer>=0; --layer)
                 {
                     for(auto elem=0; elem<dervative_output.back().size(); ++elem)

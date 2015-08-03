@@ -4,7 +4,7 @@
 int main()
 {
     srand(time(nullptr));
-    test_for_FFNNBP();
+    test_for_AE();
     
     return 0;
 }
