@@ -8,6 +8,7 @@
 #include "ProbablisticLatentSemanticIndex.hpp"
 #include "FeadForwardNeuralNetworkBackPropergation.hpp"
 #include "AutoEncoder.hpp"
+#include "Apriori.hpp"
 
 void draw_random_circle_ising_model()
 {
@@ -132,6 +133,25 @@ void test_for_AE()
     cout<<ae.infer_represent(datasets.row(1))<<endl;
     cout<<ae.infer_represent(datasets.row(2))<<endl;
     cout<<ae.infer_represent(datasets.row(3))<<endl;
+}
+
+void test_for_apriori()
+{
+    vector<set<unsigned>>   dataset(6);
+    dataset[0] = {0,1,2,3};
+    dataset[1] = {0,1,3};
+    dataset[2] = {0,1,2,3,4};
+    dataset[3] = {4,5,6};
+    dataset[4] = {2,3,7};
+    dataset[5] = {0,1,2,3,4,5,6};
+    
+    Apriori ap(7);
+    set<set<unsigned>>   result = ap.run(dataset, 4);
+    for_each(result.begin(), result.end(), [](const set<unsigned>& elem)
+             {
+                 copy(elem.begin(), elem.end(), ostream_iterator<unsigned>(cout, ","));
+                 cout<<endl;
+             });
 }
 
 #endif

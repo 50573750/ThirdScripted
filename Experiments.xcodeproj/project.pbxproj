@@ -39,6 +39,7 @@
 		7E1CF9E21B6A5B700022036E /* ProbablisticLatentSemanticIndex.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ProbablisticLatentSemanticIndex.hpp; path = Experiments/ProbablisticLatentSemanticIndex.hpp; sourceTree = "<group>"; };
 		7E1CF9E31B6D08190022036E /* FeadForwardNeuralNetworkBackPropergation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = FeadForwardNeuralNetworkBackPropergation.hpp; path = Experiments/FeadForwardNeuralNetworkBackPropergation.hpp; sourceTree = "<group>"; };
 		7E7D88451B6FBCE000AD1F95 /* AutoEncoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = AutoEncoder.hpp; path = Experiments/AutoEncoder.hpp; sourceTree = "<group>"; };
+		7E7D88461B710DC200AD1F95 /* Apriori.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Apriori.hpp; path = Experiments/Apriori.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +67,7 @@
 				7E1CF9E11B691A6A0022036E /* GuassianProcess.hpp */,
 				7E1CF9E31B6D08190022036E /* FeadForwardNeuralNetworkBackPropergation.hpp */,
 				7E7D88451B6FBCE000AD1F95 /* AutoEncoder.hpp */,
+				7E7D88461B710DC200AD1F95 /* Apriori.hpp */,
 			);
 			name = Library;
 			sourceTree = "<group>";
