@@ -10,17 +10,17 @@ Dependences
 
 # Models and Alorightms.
 There list all the models and algorithms:
--   __ Determinant Point Process (DPP) __.
--   ** Guassian Mixture Model (GMM) **.
--   ** Portable Pixelmap (PPM) ** Format Operation.
--   ** Ising Model** with Naive Mean Field, Gibbis Sampling, and Collapsed Sampling.
--   ** Restrict Boltzman Machine (RBM) ** with EM Empirical-Expectional Gradient.
--   ** Hidden Markov Model (HMM) ** with Probabilty Estimation, Viterbi Decoding and Baum-Welch Training Algorithm.
--   ** Gussian Process ** with extract solution and Naive Mean Field Solution.
--   ** Probablistic Latent Semantic Index (pLSI) ** with Expection-Maximazation/EM Method.
--   ** Multi-Layer Feed Forward Neual Network ** with RBM pre-training and Back-propergation fine-tuning.
--   ** AutoEncoder ** with RBM pre-training.
--   ** Apriori Algorithm ** for frequent item discovery.
+-   Determinant Point Process (DPP).
+-   Guassian Mixture Model (GMM).
+-   Portable Pixelmap (PPM) Format Operation.
+-   Ising Model with Naive Mean Field, Gibbis Sampling, and Collapsed Sampling.
+-   Restrict Boltzman Machine (RBM) with EM Empirical-Expectional Gradient.
+-   Hidden Markov Model (HMM) with Probabilty Estimation, Viterbi Decoding and Baum-Welch Training Algorithm.
+-   Gussian Process with extract solution and Naive Mean Field Solution.
+-   Probablistic Latent Semantic Index (pLSI)
+-   Multi-Layer Feed Forward Neual Network with RBM pre-training and Back-propergation fine-tuning.
+-   AutoEncoder with RBM pre-training.
+-   Apriori Algorithm for frequent item discovery.
 
 # Future Work.
 There list probablic future work.
