@@ -10,7 +10,7 @@ Dependences
 
 # Models and Alorightms.
 There list all the models and algorithms:
--   ** Determinant Point Process (DPP) **.
+-   __ Determinant Point Process (DPP) __.
 -   ** Guassian Mixture Model (GMM) **.
 -   ** Portable Pixelmap (PPM) ** Format Operation.
 -   ** Ising Model** with Naive Mean Field, Gibbis Sampling, and Collapsed Sampling.
