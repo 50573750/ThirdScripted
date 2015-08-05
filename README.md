@@ -21,6 +21,7 @@ There list all the models and algorithms:
 -   Multi-Layer Feed Forward Neual Network with RBM pre-training and Back-propergation fine-tuning.
 -   AutoEncoder with RBM pre-training.
 -   Apriori Algorithm for frequent item discovery.
+-   NaiveBayes Classifier.
 
 # Future Work.
 There list probablic future work.

@@ -9,6 +9,7 @@
 #include "FeadForwardNeuralNetworkBackPropergation.hpp"
 #include "AutoEncoder.hpp"
 #include "Apriori.hpp"
+#include "NaiveBayes.hpp"
 
 void draw_random_circle_ising_model()
 {
@@ -152,6 +153,22 @@ void test_for_apriori()
                  copy(elem.begin(), elem.end(), ostream_iterator<unsigned>(cout, ","));
                  cout<<endl;
              });
+}
+
+void test_for_NB()
+{
+    MatrixXd dataset(5,5);
+    vector<unsigned> label = {0,0,1,0,1};
+    dataset<<1,2,1,1,5, 2,3,0,1,5, 1,0,14,5,0, 5,6,1,0,5, 0,1,6,6,0;
+    
+    NaiveBayes nb(5,2);
+    nb.train(dataset, label, 0.01);
+    
+    cout<<nb.infer(dataset.row(0))<<endl;
+    cout<<nb.infer(dataset.row(1))<<endl;
+    cout<<nb.infer(dataset.row(2))<<endl;
+    cout<<nb.infer(dataset.row(3))<<endl;
+    cout<<nb.infer(dataset.row(4))<<endl;
 }
 
 #endif

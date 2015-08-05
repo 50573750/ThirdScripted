@@ -4,6 +4,7 @@
 int main()
 {
     srand(time(nullptr));
-    test_for_apriori();
+    test_for_NB();
+    
     return 0;
 }
