@@ -4,7 +4,7 @@
 int main()
 {
     srand(time(nullptr));
-    test_for_NB();
+    test_for_GP();
     
     return 0;
 }
