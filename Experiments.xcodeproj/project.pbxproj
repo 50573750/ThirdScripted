@@ -41,6 +41,7 @@
 		7E7D88451B6FBCE000AD1F95 /* AutoEncoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = AutoEncoder.hpp; path = Experiments/AutoEncoder.hpp; sourceTree = "<group>"; };
 		7E7D88461B710DC200AD1F95 /* Apriori.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Apriori.hpp; path = Experiments/Apriori.hpp; sourceTree = "<group>"; };
 		7E7D88471B723F7400AD1F95 /* NaiveBayes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = NaiveBayes.hpp; path = Experiments/NaiveBayes.hpp; sourceTree = "<group>"; };
+		7EFF19CA1B77938300302CF7 /* Boosting.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Boosting.hpp; path = Experiments/Boosting.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +71,7 @@
 				7E7D88451B6FBCE000AD1F95 /* AutoEncoder.hpp */,
 				7E7D88461B710DC200AD1F95 /* Apriori.hpp */,
 				7E7D88471B723F7400AD1F95 /* NaiveBayes.hpp */,
+				7EFF19CA1B77938300302CF7 /* Boosting.hpp */,
 			);
 			name = Library;
 			sourceTree = "<group>";

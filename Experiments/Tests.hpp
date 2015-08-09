@@ -10,6 +10,7 @@
 #include "AutoEncoder.hpp"
 #include "Apriori.hpp"
 #include "NaiveBayes.hpp"
+#include "Boosting.hpp"
 
 void draw_random_circle_ising_model()
 {
@@ -171,4 +172,20 @@ void test_for_NB()
     cout<<nb.infer(dataset.row(4))<<endl;
 }
 
+void test_for_AdaBoost()
+{
+    MatrixXd dataset(4, 2);
+    MatrixXd label(4, 1);
+    
+    dataset<<0,0, 0,1, 1,0, 1,1;
+    label<<-1,1,1,-1;
+    
+    AdaptiveBoosting    adaboost(dataset, label);
+    adaboost.train(10);
+    
+    cout<<adaboost.infer(dataset.row(0))<<endl;
+    cout<<adaboost.infer(dataset.row(1))<<endl;
+    cout<<adaboost.infer(dataset.row(2))<<endl;
+    cout<<adaboost.infer(dataset.row(3))<<endl;
+}
 #endif

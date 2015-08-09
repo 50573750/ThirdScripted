@@ -22,6 +22,8 @@ There list all the models and algorithms:
 -   AutoEncoder with RBM pre-training.
 -   Apriori Algorithm for frequent item discovery.
 -   NaiveBayes Classifier.
+-   Weighted Least Mean Square Linear Discrimination Model (LMS\WMLS).
+-   Adaptive Boosting (AdaBoost).
 
 # Future Work.
 There list probablic future work.
